@@ -232,7 +232,7 @@ function Contact() {
     setIsSending(true);
   
     try {
-      await emailjs.sendForm('service_5o9t4p5', 'template_i8nnxlz', form.current, '7q_A-MPmCuO_WYMrQ');
+      await emailjs.sendForm('service_9j2wgbe', 'template_00bdir3', form.current, 'X10sgYtWdhJcHb-Vx');
       console.log('Email sent successfully');
       setIsSuccess(true);
       form.current.reset();
