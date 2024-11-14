@@ -148,15 +148,13 @@ function BrandInfo() {
           <Row>
             <Col style={{position:'relative'}} sm="4">
               <div className="brand-info__item">
-                <img src="https://firebasestorage.googleapis.com/v0/b/eco-zakatek.appspot.com/o/svg%2FFamily%20going%20on%20a%20trip.svg?alt=media&token=c640b7ec-952e-4beb-b7dc-0e805c24a090" alt="trip" />
                 <div>
-                  <h3>Wypoczynek z całą rodziną</h3>
-                  <p>Zrelaksuj się w naszych górskich domkach i ciesz się niezapomnianym wypoczynkiem z całą rodziną. Odkryj uroki przyrody i twórz niezapomniane wspomnienia, które będą ciepło Was otaczać.</p>
+                 
                 </div>
               </div>
             <a href="https://www.Dream-Walls.pl/oferta">
             <button className="button">
-              Więcej
+           
             </button>
             </a>
             </Col>

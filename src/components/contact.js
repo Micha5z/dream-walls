@@ -1,25 +1,25 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
-import emailjs from '@emailjs/browser';
+
 import { Container, Row, Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import Slider from './slider'
 
 
 const ContactContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  /* Ważne: Używamy flex-direction column, aby elementy układały się jeden pod drugim */
   background-image: url('https://i0.wp.com/londondesigncollective.com/wp-content/uploads/2022/02/PLACEHOLDER_image6.jpg?fit=1050%2C447&ssl=1');
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 3rem;
+  padding: 0;  /* Usunięcie dodatkowego paddingu */
   position: relative;
   overflow: hidden;
-  padding: 9rem 0;
+  padding-bottom: 3.5rem;
 
   /* Fix for large screens */
   @media (min-width: 961px) {
-    flex-direction: row;
-    background-attachment: fixed;
+    flex-direction: column; /* Nadal ustawiamy flex-direction column dla dużych ekranów */
   }
 
   &:before {
@@ -199,6 +199,9 @@ const ContactContainer = styled.div`
     }
 `;
 
+const FormContainer = styled.div`
+  margin-top: 3rem;  /* Dodajemy odstęp między sliderem a formularzem */
+`;
 
 
 
@@ -226,31 +229,35 @@ function Contact() {
   const sendEmail = async (e) => {
     e.preventDefault();
   
-    if (isSending) {
-      return; // Prevent multiple submissions
-    }
-    setIsSending(true);
+  //   if (isSending) {
+  //     return; // Prevent multiple submissions
+  //   }
+  //   setIsSending(true);
   
-    try {
-      await emailjs.sendForm('service_9j2wgbe', 'template_00bdir3', form.current, 'X10sgYtWdhJcHb-Vx');
-      console.log('Email sent successfully');
-      setIsSuccess(true);
-      form.current.reset();
-    } catch (error) {
-      console.log('Error sending email:', error);
-      setIsSuccess(false);
-    }
+  //   try {
+  //     await emailjs.sendForm('service_9j2wgbe', 'template_00bdir3', form.current, 'X10sgYtWdhJcHb-Vx');
+  //     console.log('Email sent successfully');
+  //     setIsSuccess(true);
+  //     form.current.reset();
+  //   } catch (error) {
+  //     console.log('Error sending email:', error);
+  //     setIsSuccess(false);
+  //   }
   
-    setIsSending(false);
-    setIsPopupVisible(true);
+  //   setIsSending(false);
+  //   setIsPopupVisible(true);
 
-      // Reset the popup visibility after 2 seconds
-    setTimeout(() => {
-    setIsPopupVisible(false);
-  }, 2000);
+  //     // Reset the popup visibility after 2 seconds
+  //   setTimeout(() => {
+  //   setIsPopupVisible(false);
+  // }, 2000);
   };
   return (
+
+    
+
     <ContactContainer>
+      <Slider></Slider>
       <Container>
         <Row>
 

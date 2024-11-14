@@ -77,7 +77,7 @@ const Footer = () => {
           <StyledFooterLink to="/privacy">
             <p style={{ margin: 0, marginRight: 16 }} >Polityka prywatności</p>
           </StyledFooterLink>
-          <p style={{ margin: 0, marginRight: 16 }} >Strona w trakcie budowy 🛠</p>
+          
           
         </StyledFooterSection>
        

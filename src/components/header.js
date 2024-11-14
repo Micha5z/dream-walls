@@ -14,7 +14,6 @@ import { Sun, Moon, Facebook, Instagram } from 'react-feather'
 import { useDarkMode } from '../contexts/Application'
 import useDocumentScrollThrottled from '../utils/useDocumentScrollThrottled'
 
-
 import EuroSignBlack from '../images/Europe.svg'
 import EuroSignWhite from '../images/Europewhite.svg'
 
@@ -30,7 +29,7 @@ const StyledHeader = styled.header`
   z-index: 30;
   position: sticky;
   top: -1px;
-  background: ${({ theme, open, showBG }) => (showBG && !open ? theme.backgroundColor : 'none')};
+  background: #0f1013;
   border-bottom: 1px solid ${({ theme, open, showBG }) => (showBG && !open ? theme.concreteGray : 'none')};
   transition: background-color 0.25s ease;
 
@@ -75,8 +74,7 @@ const StyledNav = styled.nav`
 const StyledNavTitleWrapper = styled.nav`
   display: flex;
   align-items: center;
-  width: 100%;
-  
+  width: 100%;  
 `
 
 
@@ -84,9 +82,9 @@ const StyledButton2 = styled.button`
   border: none;
   background-color: rgba(0, 0, 0, 0);
   path {
-    fill: ${({ theme, open, showBG }) => (showBG && !open ? theme.textColor : 'white')};
+    fill: #F7F8FA;
   }
-  color: ${({ theme, open, showBG }) => (showBG && !open ? theme.textColor : 'white')};
+  color: #F7F8FA;
   
   :focus {
     outline: none;
@@ -101,9 +99,9 @@ const StyledButton2 = styled.button`
   @media (max-width: 960px) {
     display: flex;
     path {
-      fill: ${({ theme }) => (theme.textColor)};
+      fill: #F7F8FA;
     }
-    color: ${({ theme }) => (theme.textColor)};  
+    color: #F7F8FA;
   }
   margin-right:10px;
 `
@@ -112,9 +110,9 @@ const StyledButton = styled.button`
   border: none;
   background-color: rgba(0, 0, 0, 0);
   path {
-    fill: ${({ theme }) => (theme.textColor)};
+    fill: #F7F8FA;
   }
-  color: ${({ theme }) => (theme.textColor)};
+  color: #F7F8FA;
   
   :focus {
     outline: none;
@@ -129,9 +127,9 @@ const StyledButton = styled.button`
 
   @media (max-width: 960px) {
     path {
-      fill: ${({ theme }) => (theme.textColor)};
+      fill: #F7F8FA;
     }
-    color: ${({ theme }) => (theme.textColor)};  
+    color: #F7F8FA;
   }
 `
 
@@ -186,7 +184,7 @@ const StyledCloseIcon = styled(CloseIcon)`
 
 const StyledMenuIcon = styled(MenuIcon)`
   path {
-    stroke: ${({ theme }) => theme.textColor};
+    stroke: #F7F8FA;
   }
 `
 
@@ -205,10 +203,10 @@ const Header = () => {
   const isMobile = useMediaQuery( 'maxWidth: 700px');
 
   const handleInstagramClick = () => {
-    window.open('https://instagram.com/', '_blank');
+    window.open('https://www.instagram.com/visio_wall/', '_blank');
   };
   const handleFacebookClick = () => {
-    window.open('https://www.facebook.com/', '_blank');
+    window.open('https://www.facebook.com/share/15NpGGBCLG/?mibextid=LQQJ4d', '_blank');
   };
 
   useDocumentScrollThrottled(callbackData => {
@@ -280,7 +278,7 @@ const Header = () => {
           <img
             alt='logo'
             className='myLogo'
-            src={isMobile ? LogoMobile : (darkMode ? White : Logo) }
+            src={isMobile ? LogoMobile : White }
           />
         </StyledHomeLink>
       </StyledNavTitleWrapper>
